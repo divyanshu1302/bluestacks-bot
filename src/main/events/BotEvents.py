@@ -11,7 +11,7 @@ async def on_ready():
 
 @botClient.event
 async def on_message(message):
-    if 'hi' in message.content.lower():
+    if 'hi' == message.content.lower():
         await message.channel.send('Hey!')
     elif '!google' in message.content.lower():
         await message.channel.send(search_results(message.content))

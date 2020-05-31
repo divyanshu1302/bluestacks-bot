@@ -5,7 +5,7 @@ import os
 import discord
 from dotenv import load_dotenv
 
-DATABASE = MongoClient()['bluestack-bot']
+DATABASE = MongoClient()['bluestacks-bot']
 DEBUG = True
 client = MongoClient('localhost', 27017)
 

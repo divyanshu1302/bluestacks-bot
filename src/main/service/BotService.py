@@ -6,7 +6,7 @@ except ImportError:
 from src.main import config
 
 # Select the database
-db = config.client['bluestack-bot']
+db = config.client['bluestacks-bot']
 # Select the collection
 collection = db.searchHistory
 collection.create_index([('searchString', 'text')])
