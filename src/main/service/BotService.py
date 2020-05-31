@@ -6,7 +6,8 @@ except ImportError:
 from src.main.config import db
 
 # Select the collection
-collection = db.searchHistory
+COLLECTION_SEARCH_HISTORY = os.getenv('COLLECTION_SEARCH_HISTORY')
+collection = db[COLLECTION_SEARCH_HISTORY]
 collection.create_index([('searchString', 'text')])
 search_str = "!google"
 recent_str = "!recent"

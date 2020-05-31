@@ -4,11 +4,13 @@ from pymongo import MongoClient
 import os
 import discord
 from dotenv import load_dotenv
+
 DEBUG = True
-client = MongoClient("mongodb+srv://weeknd13:Ci4TRf3p4skiwdAG@cluster0-itehn.mongodb.net/test?retryWrites=true&w"
-                     "=majority")
+mongoUri = os.getenv('MONGO_URI')
+client = MongoClient(mongoUri)
+BOT_DATABASE = os.getenv('BOT_DATABASE')
 # Select the database
-db = client['bluestacks-bot']
+db = client[BOT_DATABASE]
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
