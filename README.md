@@ -8,8 +8,3 @@
 * Functionality to allow a user to search on google through discord. If the user types **!google nodejs**, reply with top 5 links that you would get when you search **nodejs** on **google.com**
 
 * Functionality to search through your search history. If a user uses **!google** to search for **"nodejs"** **"apple games"** **"game of thrones"**, and after these searches, if user types **!recent game**, your bot should reply with **"apple games"** and **"game of thrones"**
-
-# Details
-* Discord bot name - **bluestacksBot**
-* Bot invite url - https://discord.com/api/oauth2/authorize?client_id=716333234845253694&permissions=271969360&scope=bot
-
