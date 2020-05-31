@@ -1,3 +1,4 @@
+import os
 
 try:
     from googlesearch import search
@@ -9,6 +10,7 @@ from src.main.config import db
 COLLECTION_SEARCH_HISTORY = os.getenv('COLLECTION_SEARCH_HISTORY')
 collection = db[COLLECTION_SEARCH_HISTORY]
 collection.create_index([('searchString', 'text')])
+
 search_str = "!google"
 recent_str = "!recent"
 
@@ -26,9 +28,10 @@ def search_results(query):
 def get_search_results(query):
     query = query.replace(search_str, "").strip()
     doc = {"searchString": query}
-    collection.insert(doc)
+    if collection.count(doc) == 0:
+        collection.insert(doc)
     results = []
-    for j in search(query, tld="co.in", num=10, stop=10, pause=2):
+    for j in search(query, tld="com", num=5, stop=5, pause=2):
         results.append(j)
     return results
 
