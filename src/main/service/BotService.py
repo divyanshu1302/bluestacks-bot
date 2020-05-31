@@ -3,10 +3,8 @@ try:
     from googlesearch import search
 except ImportError:
     print("No module named 'google' found")
-from src.main import config
+from src.main.config import db
 
-# Select the database
-db = config.client['bluestacks-bot']
 # Select the collection
 collection = db.searchHistory
 collection.create_index([('searchString', 'text')])
